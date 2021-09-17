@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fizz_buzz_navigation"
+    app:startDestination="@id/fizzBuzzInputsFragment">
+
+
+
+    <fragment
+        android:id="@+id/fizzBuzzInputsFragment"
+        android:name="fr.benguiza.presentationlayer.ui.fizzbuzz.inputs.FizzBuzzInputsFragment"
+        android:label="fizzBuzzInputsFragment"
+        tools:layout="@layout/fragment_fizz_buzz_listing">
+
+        <action
+            android:id="@+id/action_fizzBuzzInputsFragment_to_fizzBuzzDetailsFragment"
+            app:destination="@id/fizzBuzzDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fizzBuzzDetailsFragment"
+        android:name="fr.benguiza.presentationlayer.ui.fizzbuzz.details.FizzBuzzDetailsFragment"
+        android:label="fizzBuzzDetailsFragment"
+        tools:layout="@layout/fragment_fizz_buzz_details" />
+</navigation>

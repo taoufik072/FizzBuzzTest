@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_nam">FizzBuzz</string>
+    <string name="error_title">Erreur !</string>
+    <string name="error_message">Maximum 100 or input error</string>
+    <string name="error_action">Réessayer</string>
+    <string name="loading_message">Chargement en cours</string>
+    <string name="details_btn">Display Graph</string>
+    <string name="word_one_title">first word</string>
+    <string name="word_second_title">second word</string>
+    <string name="first_number_title">first number</string>
+    <string name="second_number_title">second number</string>
+    <string name="limit_title">limit number</string>
+
+</resources>

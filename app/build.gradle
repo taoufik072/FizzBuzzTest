@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        multiDexEnabled true
+
+        minSdkVersion Integer.parseInt(minSdkVersionVar)
+        targetSdkVersion Integer.parseInt(targetSdkVersionVar)
+
+        versionCode computeVersionCode()
+        versionName computeProdVersionName()
+        version versionName
+
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        testProguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                "${rootProject.projectDir}/proguard/proguard-tests.txt"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+
+            buildConfigField "boolean", "LOG_ENABLE", "true"
+        }
+
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+
+            buildConfigField "boolean", "LOG_ENABLE", "false"
+        }
+    }
+
+
+    flavorDimensions "default"
+
+    productFlavors {
+
+        dev {
+            dimension "default"
+            versionName computeVersionName()
+            applicationIdSuffix ".dev"
+        }
+
+        qualif {
+            dimension "default"
+            versionName computeVersionName()
+            applicationIdSuffix ".qualif"
+        }
+
+
+        prod {
+            dimension "default"
+            applicationId "fr.benguiza.FizzBuzz"
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "Test-V${variant.versionName}-${variant.flavorName}-${variant.buildType.name}.apk"
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'javax/annotation/**'
+        exclude 'signing/**'
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+
+dependencies {
+    kapt libraries.diCheck
+    kapt libraries.daggerCompiler
+    kapt libraries.daggerAndroidCompiler
+
+    implementation project(':commons')
+    implementation project(':domainlayer')
+    implementation project(':datalayer')
+    implementation project(':presentationlayer')
+
+    implementation libraries.kotlin
+    implementation libraries.ktx
+
+    implementation libraries.dagger
+    implementation libraries.daggerAndroid
+    implementation libraries.daggerAndroidSupp
+
+    implementation libraries.timber
+    implementation libraries.rxJava
+    implementation libraries.rxKotlin
+
+}

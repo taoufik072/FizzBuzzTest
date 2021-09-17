@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/view_guideline_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/view_guideline_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/word_one_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/word_one_title"
+            android:textColor="@color/primaryDark"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/word_one"
+            style="@style/TEditText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/word_one_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/word_two_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/word_second_title"
+            android:textColor="@color/primaryDark"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toTopOf="@id/word_one" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/word_two"
+            style="@style/TEditText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/word_two_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/first_number_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/first_number_title"
+            android:textColor="@color/primaryDark"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toTopOf="@id/word_two" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/first_number"
+            style="@style/TEditText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/first_number_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/second_number_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/second_number_title"
+            android:textColor="@color/primaryDark"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toTopOf="@id/first_number" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/second_number"
+            style="@style/TEditText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/second_number_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/limit_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/limit_title"
+            android:textColor="@color/primaryDark"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toTopOf="@id/second_number" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/limit"
+            style="@style/TEditText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/limit_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/graph_btn"
+            style="@style/TEditText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="@string/details_btn"
+            app:layout_constraintEnd_toEndOf="@id/view_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/view_guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/limit" />
+
+        <include
+            layout="@layout/view_error"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

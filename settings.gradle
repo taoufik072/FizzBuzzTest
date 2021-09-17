@@ -1,0 +1,6 @@
+include ':presentationlayer'
+include ':domainlayer'
+include ':datalayer'
+include ':commons'
+include ':app'
+rootProject.name = "FizzBuzzTest"
